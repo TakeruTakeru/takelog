@@ -3,7 +3,7 @@ import React from 'react';
 import { theme } from '~/config';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-// import { createTitleByPathName } from '~/helper';
+import Layout from '~/components/layout';
 
 class MyApp extends App {
   componentDidMount() {
@@ -15,15 +15,16 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps, router } = this.props;
-    const { route } = router;
+    const { Component, pageProps } = this.props;
 
     return (
       <React.Fragment>
         <MuiThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </MuiThemeProvider>
       </React.Fragment>
     );

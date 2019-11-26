@@ -1,12 +1,8 @@
-import ScrollToTop from '~/components/actions/ScrollToTop';
-import Header from '~/components/layout/header';
+
 
 export default function() {
   return (
     <div>
-        <div id="top">
-            <Header />
-        </div>
       <div>
         {[...new Array(12)]
           .map(
@@ -17,7 +13,6 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
           )
           .join('\n')}
       </div>
-      <ScrollToTop anchorId='top' />
     </div>
   );
 }

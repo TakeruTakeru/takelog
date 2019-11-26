@@ -2,6 +2,7 @@ import React from 'react';
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Wrapper from './wrapper/ScrollToTop';
+import PropTypes from 'prop-types';
 
 function ScrollToTopIcon() {
   return (
@@ -18,3 +19,7 @@ export default function ScrollToTopIconWrapped( { anchorId }) {
         </Wrapper>
     );
 }
+
+ScrollToTopIconWrapped.propTypes = {
+  anchorId: PropTypes.string
+};
