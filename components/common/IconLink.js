@@ -3,30 +3,27 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { withStyles } from '@material-ui/core/styles';
 
-const BasicLinkStyle = {
+const CustomLinkStyle = {
   root: {
     // backgroundColor: 'gray'
   },
-  text: {
-    textDecoration: 'none'
-  },
 };
 
-const BasicLink = ({ href, title, classes }) => {
-  const { root, text } = classes;
+const CustomLink = ({ href, children, classes }) => {
+  const { root } = classes;
   return (
     <span className={root}>
       <Link href={href}>
-        <a className={text}>{title}</a>
+        {children}
       </Link>
     </span>
   );
 };
 
-BasicLink.propTypes = {
+CustomLink.propTypes = {
   href: PropTypes.string,
-  title: PropTypes.string,
+  children: PropTypes.element,
   classes: PropTypes.object,
 };
 
-export default withStyles(BasicLinkStyle)(BasicLink);
+export default withStyles(CustomLinkStyle)(CustomLink);
