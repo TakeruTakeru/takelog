@@ -1,61 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
-import HideWhenScrolling from '~/components/actions/HideWhenScrolling';
 import ScrollToTop from '~/components/actions/ScrollToTop';
-import AppBar from './header/MobileAppBar';
-import Drawer from './header/MobileDrawer';
-import { LINK_CONFIG } from '~/config';
+import Header from './header';
 
-export default function Layout({ children }) {
-  const [state, setState] = React.useState({
-    menuDrawer: false,
-  });
+const ELEMENT_ID_MAP = {
+  headerId: 'root-header',
+  bodyId: 'root-body',
+  footerId: 'root-footer'
+};
 
-  const onClickMenuIcon = event => {
-    if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
-      return;
-    }
-    setState({ ...state, menuDrawer: true });
-  };
-
-  const onCloseDrawer = event => {
-    if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
-      return;
-    }
-    setState({ ...state, menuDrawer: false });
-  };
-
+export default function Layout({ children, title, linkList }) {
+  const { headerId } = ELEMENT_ID_MAP;
   return (
-    <div id="top">
-      <React.Fragment>
-        <CssBaseline />
-        <HideWhenScrolling>
-          <AppBar onClickMenuIcon={onClickMenuIcon} title="hoge" />
-        </HideWhenScrolling>
-        <Drawer
-          onClose={onCloseDrawer}
-          anchor="top"
-          isOpen={state.menuDrawer}
-          linkList={LINK_CONFIG}
-        />
-        <Container>
-          <Box my={2}>{children}</Box>
-          <ScrollToTop anchorId="top" />
-        </Container>
-      </React.Fragment>
+    <div>
+      <Header id={headerId} title={title} linkList={linkList} />
+      <Container>
+        <Box my={2}>{children}</Box>
+        <ScrollToTop targetId={headerId} />
+      </Container>
     </div>
   );
 }
 
 Layout.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.element.isRequired,
+  title: PropTypes.string.isRequired,
+  linkList: PropTypes.array.isRequired,
 };

@@ -4,6 +4,7 @@ import { theme } from '~/config';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Layout from '~/components/layout';
+import { LINK_CONFIG, TITLE } from '~/config';
 
 class MyApp extends App {
   componentDidMount() {
@@ -22,7 +23,7 @@ class MyApp extends App {
         <MuiThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <Layout>
+          <Layout title={TITLE} linkList={LINK_CONFIG}>
             <Component {...pageProps} />
           </Layout>
         </MuiThemeProvider>

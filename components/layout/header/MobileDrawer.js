@@ -19,8 +19,8 @@ export default function MobileDrawer({
 }
 
 MobileDrawer.propTypes = {
-  isOpen: PropTypes.bool,
-  onClose: PropTypes.func,
-  linkList: PropTypes.array,
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  linkList: PropTypes.array.isRequired,
   anchor: PropTypes.string,
 };

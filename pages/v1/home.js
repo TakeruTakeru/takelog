@@ -1,6 +1,6 @@
+import React from 'react';
 
-
-export default function() {
+function Home() {
   return (
     <div>
       <div>
@@ -16,3 +16,5 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
     </div>
   );
 }
+
+export default Home;

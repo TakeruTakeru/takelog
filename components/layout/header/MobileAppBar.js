@@ -9,21 +9,31 @@ import PropTypes from 'prop-types';
 // for parent components, I need to implement this as a class
 export default class Bar extends React.Component {
   render() {
-    const { title, onClickMenuIcon } = this.props;
+    const { title, onClickMenuIcon} = this.props;
     return (
-      <AppBar>
-        <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu" onClick={onClickMenuIcon}>
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6">{title}</Typography>
-        </Toolbar>
-      </AppBar>
+      <React.Fragment>
+        <AppBar>
+          {/* Toolbar makes children to flex element. */}
+          <Toolbar>
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={onClickMenuIcon}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6">{title}</Typography>
+          </Toolbar>
+        </AppBar>
+        {/* Toolbar possessing header's height dynamicaly.  */}
+        <Toolbar id="top"/>
+      </React.Fragment>
     );
   }
 }
 
 Bar.propTypes = {
-  title: PropTypes.string,
-  onClickMenuIcon: PropTypes.func
+  title: PropTypes.string.isRequired,
+  onClickMenuIcon: PropTypes.func.isRequired,
 };

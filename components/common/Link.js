@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { withStyles } from '@material-ui/core/styles';
-import color from '@material-ui/core/colors/purple';
 
 const BasicLinkStyle = {
   root: {
@@ -26,8 +25,8 @@ const BasicLink = ({ href, title, classes }) => {
 };
 
 BasicLink.propTypes = {
-  href: PropTypes.string,
-  title: PropTypes.string,
+  href: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   classes: PropTypes.object,
 };
 

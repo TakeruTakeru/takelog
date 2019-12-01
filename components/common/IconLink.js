@@ -21,8 +21,8 @@ const CustomLink = ({ href, children, classes }) => {
 };
 
 CustomLink.propTypes = {
-  href: PropTypes.string,
-  children: PropTypes.element,
+  href: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
   classes: PropTypes.object,
 };
 

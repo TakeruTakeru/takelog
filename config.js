@@ -7,6 +7,8 @@ export const LINK_CONFIG = [
     { title: 'Blog', href: '/v1/blog' }
   ];
 
+export const TITLE = 'TakeLog';
+
 // Create a theme instance.
 export const theme = createMuiTheme({
   palette: {

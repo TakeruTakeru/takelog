@@ -12,14 +12,14 @@ function ScrollToTopIcon() {
   );
 }
 
-export default function ScrollToTopIconWrapped( { anchorId }) {
+export default function ScrollToTopIconWrapped( { targetId }) {
     return (
-        <Wrapper anchorId={anchorId}>
+        <Wrapper anchorId={targetId}>
             <ScrollToTopIcon />
         </Wrapper>
     );
 }
 
 ScrollToTopIconWrapped.propTypes = {
-  anchorId: PropTypes.string
+  targetId: PropTypes.string.isRequired
 };

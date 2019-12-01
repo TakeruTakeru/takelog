@@ -90,8 +90,8 @@ function MobilePureDrawerList({ linkList, onClick, classes }) {
 }
 
 MobilePureDrawerList.propTypes = {
-  linkList: PropTypes.array,
-  onClick: PropTypes.func,
+  linkList: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
   classes: PropTypes.object,
 };
 
