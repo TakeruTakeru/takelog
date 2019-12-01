@@ -5,17 +5,35 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 
+const styles = {
+  root: {},
+  siteTitle: {
+    flex: 'auto',
+    textAlign: 'center'
+  },
+  menuButton: {
+    display: 'block',
+    position: 'absolute',
+    right: 10
+  },
+};
 // for parent components, I need to implement this as a class
-export default class Bar extends React.Component {
+class Bar extends React.Component {
   render() {
-    const { title, onClickMenuIcon} = this.props;
+    const { title, onClickMenuIcon, classes } = this.props;
+    const { root, siteTitle, menuButton } = classes;
     return (
       <React.Fragment>
         <AppBar>
           {/* Toolbar makes children to flex element. */}
-          <Toolbar>
+          <Toolbar className={root}>
+            <Typography color="secondary" className={siteTitle} variant="h6">
+              {title}
+            </Typography>
             <IconButton
+              className={menuButton}
               edge="start"
               color="inherit"
               aria-label="menu"
@@ -23,11 +41,11 @@ export default class Bar extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6">{title}</Typography>
           </Toolbar>
+          
         </AppBar>
         {/* Toolbar possessing header's height dynamicaly.  */}
-        <Toolbar id="top"/>
+        <Toolbar />
       </React.Fragment>
     );
   }
@@ -36,4 +54,7 @@ export default class Bar extends React.Component {
 Bar.propTypes = {
   title: PropTypes.string.isRequired,
   onClickMenuIcon: PropTypes.func.isRequired,
+  classes: PropTypes.object.isRequired,
 };
+
+export default withStyles(styles)(Bar);

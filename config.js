@@ -13,10 +13,10 @@ export const TITLE = 'TakeLog';
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      main: '#000',
     },
     secondary: {
-      main: '#19857b',
+      main: '#11cb5f',
     },
     error: {
       main: red.A400,

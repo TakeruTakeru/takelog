@@ -8,15 +8,15 @@ import PropTypes from 'prop-types';
 const _ScrollTopWrapperStyle = {
   root: {
     position: 'fixed',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    bottom: theme.spacing(6),
+    right: theme.spacing(4),
   },
 };
 
 function _ScrollTopWrapper({ classes, children, anchorId }) {
   const trigger = useScrollTrigger({
     // target: window ? window() : undefined,
-    disableHysteresis: true,
+    // disableHysteresis: true,
     threshold: 150,
   });
 
@@ -26,6 +26,7 @@ function _ScrollTopWrapper({ classes, children, anchorId }) {
     );
 
     if (anchor) {
+      console.log(anchor)
       anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   };
