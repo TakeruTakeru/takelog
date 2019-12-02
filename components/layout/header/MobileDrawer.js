@@ -1,11 +1,10 @@
 import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from 'prop-types';
 import MobileMenuList from './MobileMenuList';
-import Logo from '~/components/common/Logo';
+import SiteTitle from '~/components/common/BasicSiteTitle';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -28,6 +27,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function MobileDrawer({
+  title,
   isOpen,
   onClose,
   linkList,
@@ -47,9 +47,8 @@ export default function MobileDrawer({
             <CloseIcon />
           </IconButton>
           <div className={logo}>
-            <Logo path="/static/food_honetsuki_frank.png" />
+            <SiteTitle title={title} />
           </div>
-          <Divider variant="fullWidth" />
           <MobileMenuList linkList={linkList} onClick={onClose} />
         </div>
       </Drawer>
@@ -58,6 +57,7 @@ export default function MobileDrawer({
 }
 
 MobileDrawer.propTypes = {
+  title: PropTypes.string.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   linkList: PropTypes.array.isRequired,

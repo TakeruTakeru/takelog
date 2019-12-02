@@ -10,8 +10,14 @@ const palette = {
 };
 
 const typography = {
+  body1: {
+    fontFamily: '"SawarabiGothic"'
+  },
+  body2: {
+    fontFamily: '"SawarabiGothic"'
+  },
   h5: {
-    fontFamily: 'Comic Sans MS',
+    fontFamily: '"Press Start 2P", "cursive", "Comic Sans MS"',
     letterSpacing: 2,
   },
   h6: {

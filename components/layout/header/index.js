@@ -37,6 +37,7 @@ export default function Layout({ id, title, linkList }) {
         <AppBar onClickMenuIcon={onClickMenuIcon} title={title} />
       </HideWhenScrolling>
       <Drawer
+        title="menu"
         onClose={onCloseDrawer}
         anchor="top"
         isOpen={state.menuDrawer}

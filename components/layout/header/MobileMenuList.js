@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
   },
   '@keyframes textHopping': {
     '0%': { transform: 'translateX(0px)' },
-    '100%': { transform: 'translateX(-30px)', color: theme.palette.secondary.light },
+    '100%': { transform: 'translateX(-10px)', color: theme.palette.primary.light },
   },
 }));
 
