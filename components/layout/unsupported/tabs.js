@@ -4,12 +4,12 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Link from '@/custom/link';
-import { materialUiTheme } from '~/config';
+import theme from '~/config';
 
 function a11yProps(index) {
   return {
     id: `scrollable-force-tab-${index}`,
-    'aria-controls': `scrollable-force-tabpanel-${index}`
+    'aria-controls': `scrollable-force-tabpanel-${index}`,
   };
 }
 
@@ -27,19 +27,19 @@ const styles = {
   },
   link: {
     '&:hover': {
-      textDecoration: 'none !important'
-    }
+      textDecoration: 'none !important',
+    },
   },
   tabs: {
     backgroundColor: 'white',
-    textAlign: 'right'
+    textAlign: 'right',
   },
   tab: {
-    [materialUiTheme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('xs')]: {
       fontSize: '1.5rem',
       padding: '0px',
       marginLeft: '20px',
-      marginRight: '20px'
+      marginRight: '20px',
     },
     color: '#2A2B2E',
     fontFamily: 'News Cycle, sans-serif',
@@ -53,24 +53,24 @@ const styles = {
     },
     '&:hover': {
       // 擬似クラスをメディアクエリしたい時は擬似クラス内に書く。
-      [materialUiTheme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down('xs')]: {
         fontSize: '1.8rem',
       },
       color: '#419D78',
       fontSize: '2.3rem',
-      borderBottom: '1px solid #64F58D',  
-    }
+      borderBottom: '1px solid #64F58D',
+    },
   },
-  wrapper :{
+  wrapper: {
     // position: 'absolute'
-  }
+  },
 };
 
 function MenuTab({ classes, links }) {
   const { root, indicator, tabs, tab, wrapper } = classes;
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (newValue) => {
+  const handleChange = newValue => {
     setValue(newValue);
   };
 

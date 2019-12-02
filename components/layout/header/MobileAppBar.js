@@ -1,9 +1,9 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import SiteTitle from '~/components/common/BasicSiteTitle';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -11,12 +11,12 @@ const styles = {
   root: {},
   siteTitle: {
     flex: 'auto',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   menuButton: {
     display: 'block',
     position: 'absolute',
-    right: 10
+    left: 10,
   },
 };
 // for parent components, I need to implement this as a class
@@ -29,9 +29,6 @@ class Bar extends React.Component {
         <AppBar>
           {/* Toolbar makes children to flex element. */}
           <Toolbar className={root}>
-            <Typography color="secondary" className={siteTitle} variant="h6">
-              {title}
-            </Typography>
             <IconButton
               className={menuButton}
               edge="start"
@@ -41,8 +38,10 @@ class Bar extends React.Component {
             >
               <MenuIcon />
             </IconButton>
+            <div className={siteTitle}>
+              <SiteTitle title={title} />
+            </div>
           </Toolbar>
-          
         </AppBar>
         {/* Toolbar possessing header's height dynamicaly.  */}
         <Toolbar />

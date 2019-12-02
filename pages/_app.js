@@ -1,10 +1,10 @@
 import App from 'next/app';
 import React from 'react';
-import { theme } from '~/config';
+import theme from '~/material.config';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Layout from '~/components/layout';
-import { LINK_CONFIG, TITLE } from '~/config';
+import config from '~/config';
 
 class MyApp extends App {
   componentDidMount() {
@@ -23,7 +23,7 @@ class MyApp extends App {
         <MuiThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <Layout title={TITLE} linkList={LINK_CONFIG}>
+          <Layout title={config.title} linkList={config.linkList}>
             <Component {...pageProps} />
           </Layout>
         </MuiThemeProvider>

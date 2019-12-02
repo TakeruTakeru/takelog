@@ -2,14 +2,14 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Zoom from '@material-ui/core/Zoom';
-import { theme } from '~/config';
+import theme from '~/material.config';
 import PropTypes from 'prop-types';
 
 const _ScrollTopWrapperStyle = {
   root: {
     position: 'fixed',
     bottom: theme.spacing(6),
-    right: theme.spacing(4),
+    right: theme.spacing(4)
   },
 };
 
@@ -26,7 +26,6 @@ function _ScrollTopWrapper({ classes, children, anchorId }) {
     );
 
     if (anchor) {
-      console.log(anchor)
       anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   };

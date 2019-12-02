@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
-const SimpleLogoStyle = {
+const useStyles = makeStyles(theme => ({
   root: {
-    margin: '5px',
+    margin: '8px',
   },
   img: {
     width: '8vw',
   },
-};
+}));
 
-const SimpleLogo = ({ path, classes }) => {
-  const { root, img } = classes;
+const SimpleLogo = ({ path }) => {
+  const { img } = useStyles();
   return (
-    <div className={root}>
+    <div>
       <p>
-        <img src={path} className={img} />
+        <img className={img} src={path} />
       </p>
     </div>
   );
@@ -24,7 +24,6 @@ const SimpleLogo = ({ path, classes }) => {
 
 SimpleLogo.propTypes = {
   path: PropTypes.string.isRequired,
-  classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(SimpleLogoStyle)(SimpleLogo);
+export default SimpleLogo;
