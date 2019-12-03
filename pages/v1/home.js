@@ -1,88 +1,50 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
-  },
-  gridList: {
-    width: 500,
-    height: '100%',
-  },
-}));
-
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const tileData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *     cols: 2,
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
-
+import GridList from '~/components/app/GridList';
  const hoge = [
    {
-     title: 'hoge',
-     desc: 'i like hogehoge',
-     img: '/static/img/gopher.png',
-     cols: 2
+     title: 'Golang',
+     desc: 'About 2 month, Private. love the most.',
+     img: '/static/svg/go.svg',
+     cols: 2,
+     href: '/v1/blog'
    },
    {
-    title: 'ho',
-    desc: 'i like hoho',
-    img: '/static/img/java_logo.png',
-    cols: 1
+    title: 'Python',
+    desc: 'About 1 year, Business',
+    img: '/static/svg/python.svg',
+    cols: 1,
+    href: '/v1/blog'
   },
   {
-    title: 'ho',
-    desc: 'i like hoho',
-    img: '/static/img/python_logo.png',
-    cols: 1
+    title: 'JavaScript(React.js)',
+    desc: 'About 1 year, Business',
+    img: '/static/svg/javascript.svg',
+    cols: 1,
+    href: '/v1/blog'
   },
   {
-    title: 'ho',
-    desc: 'i like hoho',
-    img: '/static/img/gopher.png',
-    cols: 2
+    title: 'Java',
+    desc: 'About 1 month, Business',
+    img: '/static/svg/java.svg',
+    cols: 1,
+    href: '/v1/blog'
   },
   {
-    title: 'ho',
-    desc: 'i like hoho',
-    img: '/static/img/python_logo.png',
-    cols: 2
+    title: 'Linux',
+    desc: 'About 2 month, private',
+    img: '/static/svg/linux.svg',
+    cols: 1,
+    href: '/v1/blog'
   },
  ];
 
 
 
 export default function ImageGridList() {
-  const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <GridList  className={classes.gridList} cols={2}>
-        {hoge.map((tile, idx) => (
-          <GridListTile key={idx} cols={tile.cols || 1}>
-            <img style={{width: '100%', height: '100%'}} src={tile.img} />
-          </GridListTile>
-        ))}
-      </GridList>
+    <div>
+      <GridList onClickGrid={(e) => console.log(e.target)} data={hoge} gridCols={2} />
     </div>
   );
 }

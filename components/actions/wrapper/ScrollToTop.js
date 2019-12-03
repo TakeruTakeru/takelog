@@ -17,7 +17,7 @@ function _ScrollTopWrapper({ classes, children, anchorId }) {
   const trigger = useScrollTrigger({
     // target: window ? window() : undefined,
     // disableHysteresis: true,
-    threshold: 0,
+    threshold: 50,
   });
 
   const handleClick = event => {

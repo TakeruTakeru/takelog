@@ -16,6 +16,13 @@ const typography = {
   body2: {
     fontFamily: '"SawarabiGothic"'
   },
+  subtitle1: {
+    fontFamily: '"SawarabiGothic"',
+    weight: 700,
+  },
+  subtitle2: {
+    fontFamily: '"SawarabiGothic"'
+  },
   h5: {
     fontFamily: '"Press Start 2P", "cursive", "Comic Sans MS"',
     letterSpacing: 2,
