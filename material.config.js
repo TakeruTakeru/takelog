@@ -7,6 +7,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 const palette = {
   primary: { main: '#212121', contrastText: '#F5F5F5' },
   secondary: { main: '#00C853', contrastText: '#FAFAFA' },
+  background: { custom: 'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)'}
 };
 
 const typography = {
