@@ -4,7 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from 'prop-types';
 import MobileMenuList from './MobileMenuList';
-import SiteTitle from '~/components/common/BasicSiteTitle';
+import Title from '~/components/common/Title';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   closeIcon: {
     position: 'absolute',
     left: 10,
-    color: theme.palette.secondary.contrastText
+    color: theme.palette.secondary.contrastText,
   },
 }));
 
@@ -47,7 +47,7 @@ export default function MobileDrawer({
             <CloseIcon />
           </IconButton>
           <div className={logo}>
-            <SiteTitle title={title} />
+            <Title title={title} variant="h6" />
           </div>
           <MobileMenuList linkList={linkList} onClick={onClose} />
         </div>

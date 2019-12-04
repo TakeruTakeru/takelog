@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import Link from '~/components/common/IconLink';
 import PropTypes from 'prop-types';
+import Img from 'react-image';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,6 +34,18 @@ const useStyles = makeStyles(theme => ({
     color: 'white'
   },
 }));
+
+/*
+  props: 
+    data -> {
+        title(string): main title,
+        subtitle(string): sub title,
+        img(string): path to image,
+        cols(number): size of grid item,
+        href(string): transition page link when clicked,
+    }
+*/
+
 export default function BasicGridList({
   gridCols,
   data,
@@ -53,7 +66,7 @@ export default function BasicGridList({
             <Link href={obj.href}>
               <GridListTileBar
                 title={obj.title}
-                subtitle="i love gopher."
+                subtitle={obj.subtitle}
                 //   titlePosition="top"
                 actionIcon={
                   <IconButton
@@ -68,7 +81,7 @@ export default function BasicGridList({
               />
             </Link>
             <Link href={obj.href}>
-              <img style={{ width: '100%', height: '100%' }} src={obj.img} />
+              <Img style={{ width: '100%', height: '100%' }} src={obj.img} loader={<h3>hoge</h3>} unloader={<h3>hoge</h3>}/>
             </Link>
           </GridListTile>
         ))}

@@ -17,9 +17,6 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content={theme.palette.primary.main} />
           <style jsx>
             {`
-              div {
-                background-color: 'black'
-              }
               @font-face {
                 font-family: 'Press Start 2P';
                 src: url('/static/fonts/PressStart2P-Regular.ttf')
