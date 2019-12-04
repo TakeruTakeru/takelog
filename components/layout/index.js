@@ -27,7 +27,7 @@ export default function Layout({ children, title, linkList }) {
   const { headerId, bodyId } = ELEMENT_ID_MAP;
   const classes = useStyles();
   const [state, setState] = React.useState({
-    loading: true,
+    loading: false,
   });
 
   return (

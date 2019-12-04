@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
   img: {
     textAlign: 'right',
-    // animation: '$runningCharactor 3s steps(2, end) infinite',
+    animation: '$runningCharactor 3s steps(2, end) infinite',
   },
   '@keyframes runningCharactor': {
     '0%': { transform: 'translateX(-10%)', opacity: '1' },
