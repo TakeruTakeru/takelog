@@ -87,7 +87,7 @@ export function LinearProgressBar({ loading }) {
           <Title className={text4} title="." variant="h6" />
         </div>
         <div className={img}>
-          <Img src="/static/svg/go.svg" loader={<div />} size="s" />
+          <Img src="/static/svg/go.svg" loader={<span />} size="s" />
         </div>
         <LinearProgress color="secondary" />
       </div>

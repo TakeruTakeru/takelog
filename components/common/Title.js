@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 
-function Title({ title, variant, className={} }) {
+function Title({ title, variant, className='' }) {
   return <Typography className={className} variant={variant}>{title}</Typography>;
 }
 
