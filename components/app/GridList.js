@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import Link from '~/components/common/IconLink';
 import PropTypes from 'prop-types';
-import Img from 'react-image';
+import Img from '~/components/common/Image';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,6 +29,9 @@ const useStyles = makeStyles(theme => ({
     fontFamily: theme.typography.subtitle1.fontFamily,
     fontWeight: theme.typography.subtitle1.weight,
     zIndex: 1,
+  },
+  img: {
+    textAlign: 'center',
   },
   icon: {
     color: 'white'
@@ -81,7 +84,9 @@ export default function BasicGridList({
               />
             </Link>
             <Link href={obj.href}>
-              <Img style={{ width: '100%', height: '100%' }} src={obj.img} loader={<h3>hoge</h3>} unloader={<h3>hoge</h3>}/>
+              <div className={classes.img}>
+              <Img src={obj.img} size="l"/>
+              </div>
             </Link>
           </GridListTile>
         ))}

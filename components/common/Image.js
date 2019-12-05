@@ -1,5 +1,4 @@
 import React from 'react';
-import Img from 'react-image';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
@@ -22,18 +21,19 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Image({ src, loader, size = 's' }) {
+function Image({ src, ref, size = 's' }) {
   const classes = useStyles();
   return (
-    <p className={classes[size]}>
-      <Img src={src} loader={loader} />
+    <p ref={ref} className={classes[size]}>
+      <img src={src} />
     </p>
   );
 }
 
 Image.propTypes = {
   src: PropTypes.string.isRequired,
-  loader: PropTypes.element.isRequired,
+  ref: PropTypes.object,
+//   loader: PropTypes.element.isRequired,
   size: PropTypes.oneOf(['s', 'm', 'l']),
 };
 
