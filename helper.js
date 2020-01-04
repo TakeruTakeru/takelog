@@ -1,6 +1,5 @@
 import path from 'path';
 
-
 export function createTitleByPathName(pathname) {
     // make page header string
     const fileName = path.basename(pathname);

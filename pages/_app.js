@@ -17,7 +17,6 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-
     return (
       <React.Fragment>
         <MuiThemeProvider theme={theme}>
