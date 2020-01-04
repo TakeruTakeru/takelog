@@ -1,10 +1,9 @@
-
+import fetch from 'isomorphic-unfetch';
 
 export class HttpClient {
 
   static async get(endpoint) {
-    // const host = 'https://takefile.herokuapp.com';
-    const host = 'http://localhost:8080';
+    const host = 'https://takefile.herokuapp.com';
     const res = await fetch(`${host}/${endpoint}`, {
     });
     return res.json();
