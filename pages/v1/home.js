@@ -41,7 +41,6 @@ const hoge = [
 ];
 
 export default function ImageGridList(props) {
-  console.log(props);
   return (
     <div>
       <GridList
@@ -57,5 +56,5 @@ ImageGridList.getInitialProps = async ({ req }) => {
   const client = HttpClient;
   // const res = await client.get('v1/test');
   // return res;
-  return {};
+  return {res:1};
 };

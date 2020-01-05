@@ -13,7 +13,6 @@ const icons = [
   <ImportContactsTwoToneIcon color="inherit" fontSize="large" key={3} />,
 ];
 const s = makeStyles(theme => {
-  console.log(theme);
   return {};
 });
 

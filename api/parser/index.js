@@ -14,7 +14,7 @@ export function parseFileResponse(res, onError) {
 }
 
 function isError(res, validate) {
-    return res.error != undefined && !(validate(res));
+    return res.error == undefined && !(validate(res));
 }
 
 function newError(res) {

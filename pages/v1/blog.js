@@ -1,41 +1,32 @@
 import React, {useEffect} from 'react';
 import { HttpClient } from '~/api';
 import { parseFileResponse } from '~/api/parser';
-import { MDRenderer } from '~/components/app/Renderer';
+import { Render, RenderBuilder, headingFunc, textFunc, codeFunc, strongFunc } from '~/components/app/parser/md';
+
+const rendererOpt = new RenderBuilder().setHeadingOpt(headingFunc)
+  .setTextOpt(textFunc).setCodeOpt(codeFunc).setStrongOpt(strongFunc).build();
 
 function Home(props) {
   var mdText;
   useEffect(() => {
     const textDecoder = new TextDecoder('utf8');
     var result = parseFileResponse(props);
-    // var ins = document.getElementById('hoge');
     if (!result) {
       mdText = '# Sorry, Error Happened.';
     } else {
       var base64UintArr = base64DecToArr(result.data, 1);
       mdText = textDecoder.decode(base64UintArr);
     }
-    document.getElementById('md-content').innerHTML = MDRenderer(mdText);
+    document.getElementById('md-content').innerHTML = Render(mdText, rendererOpt);
 
   });
   return (
-    <div style={{ background: 'white' }}>
-      <div id="md-content"></div>
-      {/* {[...new Array(12)]
-        .map(
-          () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-        )
-        .join('\n')} */}
-    </div>
+      <div id="md-content" />
   );
 }
 
 Home.getInitialProps = async () => {
   const res = await HttpClient.get('v1/gstorage/files/dGFrZXJ1LXN0b3JhZ2UvYXJ0aWNsZS_pgIDogbfmiYvntprjgY3jgb7jgajjgoEubWQ=');
-
   return res;
 };
 
