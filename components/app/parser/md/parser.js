@@ -76,7 +76,7 @@ export class RenderBuilder {
         return this;
     }
 
-    setCodespanOpt(renderingFunc) {
+    setCodeSpanOpt(renderingFunc) {
         this.renderer.codespan = renderingFunc;
         return this;
     }

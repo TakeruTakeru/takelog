@@ -6,6 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Layout from '~/components/layout';
 import config from '~/config';
 
+
 class MyApp extends App {
   componentDidMount() {
     // Remove the server-side injected CSS.

@@ -5,11 +5,13 @@ const withSass = require('@zeit/next-sass');
 
 module.exports = withSass({
     cssModules: true,
-    webpack (config, options) {
+    webpack (config, { isServer }) {
         config.resolve.alias['~'] = path.join(__dirname, '.');
-        return config;
+        if (!isServer) {
+          config.node = {
+            fs: 'empty'
+          }
       },
-      serverRuntimeConfig: {
-        env: process.env.NODE_ENV
-      }
+      return config;
+
 });
