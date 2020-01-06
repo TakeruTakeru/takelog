@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Body from './body';
+import Footer from './footer';
 import Container from '@material-ui/core/Container';
 import ScrollToTop from '~/components/actions/ScrollToTop';
 import { LinearProgressBar } from '~/components/actions/Loading';
@@ -26,7 +27,7 @@ const ELEMENT_ID_MAP = {
 };
 
 export default function Layout({ children, title, linkList }) {
-  const { headerId, bodyId } = ELEMENT_ID_MAP;
+  const { headerId, bodyId, footerId } = ELEMENT_ID_MAP;
   const classes = useStyles();
   const [state, setState] = React.useState({
     loading: false,
@@ -42,6 +43,7 @@ export default function Layout({ children, title, linkList }) {
           <Container className={classes.container}>
             <Body id={bodyId}>{children}</Body>
             <ScrollToTop targetId={headerId} />
+            <Footer id={footerId} title={title} />
           </Container>
         </React.Fragment>
       )}
